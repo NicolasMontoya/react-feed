@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import styled from 'styled-components';
+import { BackButton, LoadingButton } from './components/Buttons';
 import reportWebVitals from './reportWebVitals';
+
+const Title = styled.div`
+  font-size: 10px;
+`;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <LoadingButton></LoadingButton>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,7 +1,6 @@
 import { useFirestore, useFirestoreCollectionData } from 'reactfire';
 import { Card } from "../../components/Card";
 import { CardsContainer } from './styles';
-import GlobalFonts from '../../assets/fonts/fonts';
 import { FaHeart, FaFacebook, FaTwitter } from "react-icons/fa";
 import { useCallback, useEffect, useState  } from 'react';
 import { NoInfo } from '../../components/NoInfo';
@@ -89,7 +88,6 @@ const Feed = () => {
 
   return (
     <>
-      <GlobalFonts />
       <CardsContainer>
         {!!posts && posts.map((post, i) => (
             <Card key={i} width="600px" buttons={buttons} element={post}></Card>

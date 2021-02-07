@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from '@emotion/styled'
 
 export const CardsContainer = styled.div`
   background: #edf1f7;
@@ -6,7 +6,7 @@ export const CardsContainer = styled.div`
   flex-direction: column;
   align-items: center;
   font-family: 'Source Sans Pro';
-  &:first-child {
+  &:first-of-type {
         padding-top: 20px;
   }
 `;

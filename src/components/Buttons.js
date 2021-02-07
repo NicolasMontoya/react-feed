@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFileUpload, FaCheckCircle, FaTimesCircle, FaRegArrowAltCircleLeft } from 'react-icons/fa'
-import styled, { css } from 'styled-components';
+import { css } from '@emotion/react';
+import styled from '@emotion/styled'
 
 
 /**

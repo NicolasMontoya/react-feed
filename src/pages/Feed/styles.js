@@ -5,6 +5,8 @@ export const CardsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:2%;
   font-family: 'Source Sans Pro';
+  &:first-child {
+        padding-top: 20px;
+  }
 `;

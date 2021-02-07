@@ -14,8 +14,10 @@ export const Card = ({
 }) => {
 
   const [loading, setLoading] = useState(true);
+  const [relativeHeight, setRelativeHeight] = useState('0px');
   
   const handleEvent = () => {
+    setRelativeHeight(heightImage);
     setLoading(false);
   }
 
@@ -40,7 +42,7 @@ export const Card = ({
               <span>{(!loading && handleDate(element.createdDate) || <Skeleton count={4}/>)}</span>
             </HeadSection>
             <BodySection>
-              {!!element.image && <img onLoad={handleEvent} src={element.image} width={width} height={heightImage} ></img>}
+              {!!element.image && <img onLoad={handleEvent} src={element.image} width={width} height={relativeHeight} ></img>}
               <div>{(!loading && element.description) || <Skeleton/>}</div>
             </BodySection>
             <HeartSection>{(!loading && <span>{element.likes} corazones </span>) || <Skeleton/>}</HeartSection>

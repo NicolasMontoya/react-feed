@@ -2,3 +2,7 @@ body {
   padding: 0;
   margin: 0;
 }
+
+body > #root > div {
+  min-height: 100vh;
+}

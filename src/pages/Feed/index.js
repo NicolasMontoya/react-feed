@@ -65,7 +65,7 @@ const Feed = () => {
       color: 'red',
       size: '40px',
       onClick: handleLike,
-      colorOver: 'red',
+      colorOver: '#FF4C4C',
       icon: FaHeart
     },
     {
@@ -73,7 +73,7 @@ const Feed = () => {
       color: '#1877f2',
       size: '40px',
       onClick: sharedFaceBook,
-      colorOver: '#1877f2',
+      colorOver: '#5D9FF5',
       icon: FaFacebook
     },
     {
@@ -81,7 +81,7 @@ const Feed = () => {
       color: '#1da1f2',
       size: '40px',
       onClick: sharedTwitter,
-      colorOver: '#1da1f2',
+      colorOver: '#77C6F7',
       icon: FaTwitter
     }
   ];

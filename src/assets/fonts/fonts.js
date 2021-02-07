@@ -9,5 +9,6 @@ export default createGlobalStyle`
         url(${SourceSansPro}) format('truetype');
         font-weight: 300;
         font-style: normal;
+        font-display: swap;
     }
 `;

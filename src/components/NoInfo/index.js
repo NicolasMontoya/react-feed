@@ -7,7 +7,7 @@ export const NoInfo = () => {
   return (
       <>
         <Container>
-            <img src={emptyImg} width="400px" alt="empty image posts"></img>
+            <img src={emptyImg} width="400px" height="auto" alt="empty image posts"></img>
             <p>No hay información disponible</p>
         </Container>
       </>

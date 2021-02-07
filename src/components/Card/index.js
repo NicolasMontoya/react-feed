@@ -9,6 +9,7 @@ export const Card = ({
   buttons,
   width = '100%',
   height = 'auto',
+  heightImage= "400px",
   radius = '20px'
 }) => {
 
@@ -39,7 +40,7 @@ export const Card = ({
               <span>{(!loading && handleDate(element.createdDate) || <Skeleton count={4}/>)}</span>
             </HeadSection>
             <BodySection>
-              {!!element.image && <img onLoad={handleEvent} src={element.image} width={width} ></img>}
+              {!!element.image && <img onLoad={handleEvent} src={element.image} width={width} height={heightImage} ></img>}
               <div>{(!loading && element.description) || <Skeleton/>}</div>
             </BodySection>
             <HeartSection>{(!loading && <span>{element.likes} corazones </span>) || <Skeleton/>}</HeartSection>

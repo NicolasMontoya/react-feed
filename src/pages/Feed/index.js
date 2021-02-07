@@ -8,7 +8,7 @@ import { NoInfo } from '../../components/NoInfo';
 
 
 
-export const Feed = () => {
+const Feed = () => {
 
   const size = 10;
   let [limit, setLimit] = useState(10);
@@ -99,3 +99,5 @@ export const Feed = () => {
     </>)
 
 }
+
+export default Feed;

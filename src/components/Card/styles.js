@@ -10,7 +10,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     flex:1 1 auto;
-    font-family: 'Font Name';
     margin:5px;
   `;
 

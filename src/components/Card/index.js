@@ -15,12 +15,10 @@ export const Card = ({
   const [loading, setLoading] = useState(true);
   
   const handleEvent = () => {
-    console.log("Application dies");
     setLoading(false);
   }
 
   useEffect(() => {
-    console.log(buttons);
     if (!!!element.image) {
       setLoading(false);
     }

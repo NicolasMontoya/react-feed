@@ -5,7 +5,6 @@ import GlobalFonts from '../../assets/fonts/fonts';
 import { FaHeart, FaFacebook, FaTwitter } from "react-icons/fa";
 import { useCallback, useEffect, useState  } from 'react';
 import { NoInfo } from '../../components/NoInfo';
-import { loremIpsum, fullname  } from 'react-lorem-ipsum';
 
 
 
@@ -41,7 +40,7 @@ export const Feed = () => {
     };
   }, [handlePage]);
 
-  const {data: posts, status, isComplete, hasEmitted} = useFirestoreCollectionData(query, {idField: 'id'});
+  const {data: posts, status} = useFirestoreCollectionData(query, {idField: 'id'});
   
 
 

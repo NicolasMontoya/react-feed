@@ -3,16 +3,45 @@ import { Card } from "../../components/Card";
 import { CardsContainer } from './styles';
 import GlobalFonts from '../../assets/fonts/fonts';
 import { FaHeart, FaFacebook, FaTwitter } from "react-icons/fa";
+import { useCallback, useEffect, useState  } from 'react';
+import { NoInfo } from '../../components/NoInfo';
+import { loremIpsum, fullname  } from 'react-lorem-ipsum';
+
 
 
 export const Feed = () => {
 
-  let page = 0;
+  const size = 10;
+  let [limit, setLimit] = useState(10);
 
-  const emptyImg = "https://firebasestorage.googleapis.com/v0/b/eecowin-773e2.appspot.com/o/undraw_empty_xct9.svg?alt=media&token=055f8be4-903e-4125-88c2-a80e3123aeb7";
+  const fireStore = useFirestore();
+  const postColletion = fireStore.collection(process.env.REACT_APP_POSTS)
+  const query = postColletion.orderBy('createdDate').limit(limit);
 
-  const postColletion = useFirestore().collection(process.env.REACT_APP_POSTS)
-  const {data: posts} = useFirestoreCollectionData(postColletion.orderBy('createdDate').startAt(page).limit(1), { idField: "id" });
+  const handlePage = useCallback(event => {
+    
+    if (status != 'loading') {
+      if (
+        window.innerHeight + document.documentElement.scrollTop
+        === document.documentElement.offsetHeight
+      ) 
+      {
+        const newLimit = limit + size;
+        setLimit(newLimit);
+      }
+    }
+  })
+
+
+  useEffect(() => {
+    window.addEventListener('scroll', handlePage);
+
+    return () => {
+      window.removeEventListener('scroll', handlePage);
+    };
+  }, [handlePage]);
+
+  const {data: posts, status, isComplete, hasEmitted} = useFirestoreCollectionData(query, {idField: 'id'});
   
 
 
@@ -24,12 +53,11 @@ export const Feed = () => {
   }
 
   const sharedFaceBook = (post) => () => {
-    console.log(page);
-    page = 1;
+    
   };
 
   const sharedTwitter = (post) => () => {
-    console.log(page);
+    
   };
 
   const buttons = [
@@ -64,16 +92,10 @@ export const Feed = () => {
     <>
       <GlobalFonts />
       <CardsContainer>
-      {!!posts && posts.map((post, i) => (
-          <Card key={i} width="600px" buttons={buttons} element={post}></Card>
+        {!!posts && posts.map((post, i) => (
+            <Card key={i} width="600px" buttons={buttons} element={post}></Card>
         ))}
-      {!!posts && posts.length == 0 && 
-        <div>
-          <img src={emptyImg} width="200px" alt="empty image posts"
-          ></img>
-          No hay información disponible
-        </div>
-      }
+        {!!posts && posts.length == 0 && <NoInfo />}
       </CardsContainer>
     </>)
 

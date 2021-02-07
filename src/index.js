@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
-import { BackButton, LoadingButton } from './components/Buttons';
+import { FirebaseAppProvider } from 'reactfire';
+import { Feed } from './pages/Feed/Feed';
 import reportWebVitals from './reportWebVitals';
+import firebaseConfig from './config/firebase-config';
+import 'firebase/firestore';
+import './index.css';
 
-const Title = styled.div`
-  font-size: 10px;
-`;
-
+ 
 ReactDOM.render(
   <React.StrictMode>
-    <LoadingButton></LoadingButton>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+      <Suspense fallback={'Waiting...'}>
+        <Feed></Feed>
+      </Suspense>
+    </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

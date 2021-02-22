@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 export const Container = styled.div`
     background: white;
     width: ${(props) => props.width || '0px'};
-    max-width: ${(props) => props.width || '0px'};
+    max-width: ${(props) => props.maxWidth || '0px'};
     height: ${(props) => props.height || '0px'};
     border-radius: ${(props) => props.radius || '0px'};
     display: flex;

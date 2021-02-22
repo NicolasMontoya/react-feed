@@ -8,6 +8,7 @@ export const Card = ({
   element,
   buttons,
   width = '100%',
+  maxWidth = '600px',
   height = 'auto',
   heightImage= "400px",
   radius = '20px'
@@ -35,8 +36,7 @@ export const Card = ({
       <>
         {
         !!element &&
-        <div>
-          <Container radius={radius} width={width} height={height}>
+          <Container radius={radius} maxWidth={maxWidth} width={width} height={height}>
             <HeadSection>
               <h1>{(!loading && element.title) || <Skeleton/>}</h1>
               <span>{(!loading && handleDate(element.createdDate) || <Skeleton count={4}/>)}</span>
@@ -56,7 +56,6 @@ export const Card = ({
               </SharedSection>
             }
           </Container>
-        </div>
         }
       </>
     ) 

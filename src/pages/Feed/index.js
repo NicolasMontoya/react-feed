@@ -90,7 +90,7 @@ const Feed = () => {
     <>
       <CardsContainer>
         {!!posts && posts.map((post, i) => (
-            <Card key={i} width="600px" buttons={buttons} element={post}></Card>
+            <Card key={i} maxWidth="600px" width="100%" buttons={buttons} element={post}></Card>
         ))}
         {!!posts && posts.length == 0 && <NoInfo />}
       </CardsContainer>

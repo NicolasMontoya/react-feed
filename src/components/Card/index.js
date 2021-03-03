@@ -45,7 +45,8 @@ export const Card = ({
               {!!element.image && <img onLoad={handleEvent} src={element.image} width={width} height={relativeHeight} ></img>}
               <div>{(!loading && element.description) || <Skeleton/>}</div>
             </BodySection>
-            <HeartSection>{(!loading && <span>{element.likes} corazones </span>) || <Skeleton/>}</HeartSection>
+            <div style={{display: "flex", flexDirection: "row", alignContent: "center"}}>
+            <HeartSection style={{alignSelf: "center"}}>{(!loading && <span>{element.likes} corazones </span>) || <Skeleton/>}</HeartSection>
             {
               <SharedSection>
                 {
@@ -55,6 +56,7 @@ export const Card = ({
                 }
               </SharedSection>
             }
+            </div>
           </Container>
         }
       </>

@@ -14,7 +14,7 @@ const Feed = () => {
 
   const fireStore = useFirestore();
   const postColletion = fireStore.collection(process.env.REACT_APP_POSTS)
-  const query = postColletion.orderBy('createdDate').limit(limit);
+  const query = postColletion.orderBy('order').limit(limit);
 
   const handlePage = useCallback(event => {
     
@@ -66,22 +66,6 @@ const Feed = () => {
       onClick: handleLike,
       colorOver: '#FF4C4C',
       icon: FaHeart
-    },
-    {
-      name: 'FaceBook',
-      color: '#1877f2',
-      size: '40px',
-      onClick: sharedFaceBook,
-      colorOver: '#5D9FF5',
-      icon: FaFacebook
-    },
-    {
-      name: 'Twitter',
-      color: '#1da1f2',
-      size: '40px',
-      onClick: sharedTwitter,
-      colorOver: '#77C6F7',
-      icon: FaTwitter
     }
   ];
 

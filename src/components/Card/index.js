@@ -43,6 +43,7 @@ export const Card = ({
             </HeadSection>
             <BodySection>
               {!!element.image && <img onLoad={handleEvent} src={element.image} width={width} height={relativeHeight} ></img>}
+              {!!element.video && <iframe  onLoad={handleEvent} src={element.video} width={width} height={relativeHeight} ></iframe >}
               <div>{(!loading && element.description) || <Skeleton/>}</div>
             </BodySection>
             <div style={{display: "flex", flexDirection: "row", alignContent: "center"}}>

@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "eecowin-b04e8"
+    "default": "eecowin-b04e8",
+    "eecowin": "eecowin-b04e8"
   }
 }
